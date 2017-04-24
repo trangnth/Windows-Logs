@@ -23,27 +23,32 @@ Winlogbeat có thể bắt được event data từ bất kỳ một event logs 
 <a name="deployment"></a>
 ## 2. Deployment
 ### Requirements
-windows server 2008 R2
-
-Elasticsearch: 192.168.169.223:9200
-
-Logstash: 192.168.169.220:5044
+	windows server 2008 R2
+	Hệ thống ELK đã cài beat, cấu hình nhận trên các cổng sau:
+	- Elasticsearch: 192.168.169.223:9200
+	- Logstash: 192.168.169.220:5044
+	 
 
 ### Installtion
 
 [Step 1: Installing Winlogbeat](#step1)
+
 [Step 2: Configuring Winlogbeat](#step2)
+
 [Step 3: Configuring Winlogbeat to Use Logstash](#step3)
+
 [Step 4: Starting Winlogbeat](#step4)
+
 [Step 5: Loading Sample Kibana Dashboards](#step5)
+
 
 <a name="step1"></a>
 ### Step 1: Installing Winlogbeat 
 
-	1. Download Winlogbeat tại [Đây]("https://www.elastic.co/downloads/beats/winlogbeat")
-	2. Giải nén ra `C:\Program Files` và đổi tên thư mục thành `Winlogbeat`
-	3. Mở PowerShell dưới quyền Administrator
-	4. Chạy các lệnh sau trên PowerShell để install 
+* Download Winlogbeat tại [Đây]("https://www.elastic.co/downloads/beats/winlogbeat")
+* Giải nén ra `C:\Program Files` và đổi tên thư mục thành `Winlogbeat`
+* Mở PowerShell dưới quyền Administrator
+* Chạy các lệnh sau trên PowerShell để install 
 		
 		PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1
 		cd 'C:\Program Files\Winlogbeat'
