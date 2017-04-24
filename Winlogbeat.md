@@ -110,7 +110,7 @@ Vào thư mục cài đặt winlogbeat chạy
 
 Mở Kibana lên, trên Discover đã có `winlogbeat-*	`
 
-<img src = "img\kibana">
+<img src = "img\kibana.png">
 
 #### Report
 <img src="img\1.png">
