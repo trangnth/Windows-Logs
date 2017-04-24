@@ -45,7 +45,7 @@ Winlogbeat có thể bắt được event data từ bất kỳ một event logs 
 <a name="step1"></a>
 ### Step 1: Installing Winlogbeat 
 
-* Download Winlogbeat tại [Đây]("https://www.elastic.co/downloads/beats/winlogbeat")
+* Download Winlogbeat tại [Đây](https://www.elastic.co/downloads/beats/winlogbeat)
 * Giải nén ra `C:\Program Files` và đổi tên thư mục thành `Winlogbeat`
 * Mở PowerShell dưới quyền Administrator
 * Chạy các lệnh sau trên PowerShell để install 
