@@ -1,18 +1,10 @@
-﻿# Winlogbeat
+# Winlogbeat
 
 1. [Overview](#overview)
 
-
-
 2. [Deployment](#deployment)
 
-
-
 3. [Research](#research)
-
-
-
-
 
 <a name="overview"></a>
 
@@ -29,7 +21,7 @@ Winlogbeat có thể bắt được event data từ bất kỳ một event logs 
 - system events 	
 
 <a name="deployment"></a>
-##2. Deployment
+## 2. Deployment
 ### Requirements
 windows server 2008 R2
 
@@ -37,7 +29,7 @@ Elasticsearch: 192.168.169.223:9200
 
 Logstash: 192.168.169.220:5044
 
-###Installtion
+### Installtion
 
 [Step 1: Installing Winlogbeat](#step1)
 [Step 2: Configuring Winlogbeat](#step2)
@@ -46,7 +38,7 @@ Logstash: 192.168.169.220:5044
 [Step 5: Loading Sample Kibana Dashboards](#step5)
 
 <a name="step1"></a>
-###Step 1: Installing Winlogbeat 
+### Step 1: Installing Winlogbeat 
 
 	1. Download Winlogbeat tại [Đây]("https://www.elastic.co/downloads/beats/winlogbeat")
 	2. Giải nén ra `C:\Program Files` và đổi tên thư mục thành `Winlogbeat`
@@ -59,24 +51,24 @@ Logstash: 192.168.169.220:5044
 
 
 <a name="step2"></a>
-###Step 2: Configuring Winlogbeat
+### Step 2: Configuring Winlogbeat
 
 Sửa file winlogbeat để configure
 
 	1. Thêm các event logs muốn theo dõi
 		
-winlogbeat.event_logs:
-  - name: Application
-  - name: Security
-  - name: System
+	winlogbeat.event_logs:
+	  - name: Application
+	  - name: Security
+	  - name: System
 
 Chạy `Get-EventLog *` trên PowerShell để xem danh sách các event logs có sẵn
 
 	2. Nếu muốn output elasticsearch, set địa chỉ IP của elasticsearch:
 
-output.elasticsearch:
-  hosts:
-    - localhost:9200
+	output.elasticsearch:
+	  hosts:
+	    - localhost:9200
 
 
 <a name="step3"></a>
@@ -84,10 +76,12 @@ output.elasticsearch:
 
 Nếu muốn output logstash bỏ `#` đầu các dòng dưới đây (IP của logstash):
 
-output.logstash:
-  hosts: ["127.0.0.1:5044"]
+	output.logstash:
+	  hosts: ["127.0.0.1:5044"]
 
 Test configuration file, chạy lệnh: `.\winlogbeat.exe -c .\winlogbeat.yml -configtest -e`
+
+Ví dụ file configure output Elasticsearch [winlogbeat.yml](winlogbeat.yml)
 
 <a name="step4"></a>
 ### Step 4: Starting Winlogbeat
@@ -113,6 +107,16 @@ Mở Kibana lên, trên Discover đã có `winlogbeat-*	`
 
 <img src = "img\kibana">
 
+#### Report
+<img src="img\1.png">
+
+<img src="img\2.png">
+
+<img src="img\3.png">
+
+<img src="img\4.png">
+
+<img src="img\5.png">
 
 <a name="research"></a>
 ## 3. Research
