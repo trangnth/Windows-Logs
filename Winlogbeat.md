@@ -24,7 +24,7 @@ Winlogbeat có thể bắt được event data từ bất kỳ một event logs 
 ## 2. Deployment
 ### Requirements
 	windows server 2008 R2
-	Hệ thống ELK đã cài beat, cấu hình nhận trên các cổng sau:
+	Hệ thống ELK đã cài beat, cấu hình nhận log trên các cổng sau:
 	- Elasticsearch: 192.168.169.223:9200
 	- Logstash: 192.168.169.220:5044
 	 
@@ -108,12 +108,31 @@ Vào thư mục cài đặt winlogbeat chạy
 
 	PS > scripts\import_dashboards.exe
 
-Mở Kibana lên, trên Discover đã có `winlogbeat-*	`
+Mở Kibana lên, trên Discover hãy chắc chắn rằng đã có sẵn index `winlogbeat-*`
 
 <img src = "img\kibana.png">
 
-#### Report
+#### Report Winlogbeat
+
+*Báo cáo có sẵn*
+
+Vào `Dashboard` mở cái đã có sẵn 
+
+<img src="img\8.png">
+
+Ta nhận được báo cáo dưới đây
+
+<img src="img\9.png">
+
+*Tự tạo*
+
+Có thể tự tạo lại một báo cáo khác
+
+Chọn các trường *computer_name, logname, level, keywords, message* để xem thông tin cần thết, lưu lại với tên `Winlogbeat`
+
 <img src="img\1.png">
+
+Tiếp theo, tạo một số các visualize đê có thể theo dõi trên Dashboard
 
 <img src="img\2.png">
 
@@ -122,6 +141,8 @@ Mở Kibana lên, trên Discover đã có `winlogbeat-*	`
 <img src="img\4.png">
 
 <img src="img\5.png">
+
+
 
 <a name="research"></a>
 ## 3. Research
