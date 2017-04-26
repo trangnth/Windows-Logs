@@ -60,20 +60,20 @@ Winlogbeat có thể bắt được event data từ bất kỳ một event logs 
 
 Sửa file winlogbeat để configure
 
-	1. Thêm các event logs muốn theo dõi
+1. Thêm các event logs muốn theo dõi
 		
-	winlogbeat.event_logs:
-	  - name: Application
-	  - name: Security
-	  - name: System
+	   winlogbeat.event_logs:
+	     - name: Application
+	     - name: Security
+	     - name: System
 
 Chạy `Get-EventLog *` trên PowerShell để xem danh sách các event logs có sẵn
 
-	2. Nếu muốn output elasticsearch, set địa chỉ IP của elasticsearch:
+2. Nếu muốn output elasticsearch, set địa chỉ IP của elasticsearch:
 
-	output.elasticsearch:
-	  hosts:
-	    - localhost:9200
+	   output.elasticsearch:
+	     hosts:
+	       - localhost:9200
 
 
 <a name="step3"></a>
@@ -114,7 +114,7 @@ Mở Kibana lên, trên Discover hãy chắc chắn rằng đã có sẵn index 
 
 #### Report Winlogbeat
 
-*Báo cáo có sẵn*
+**Báo cáo có sẵn**
 
 Vào `Dashboard` mở cái đã có sẵn 
 
@@ -124,11 +124,11 @@ Ta nhận được báo cáo dưới đây
 
 <img src="img\9.png">
 
-*Tự tạo*
+**Tự tạo**
 
 Có thể tự tạo lại một báo cáo khác
 
-Chọn các trường *computer_name, logname, level, keywords, message* để xem thông tin cần thết, lưu lại với tên `Winlogbeat`
+Chọn các trường **computer_name, logname, level, keywords, message** để xem thông tin cần thết, lưu lại với tên `Winlogbeat`
 
 <img src="img\1.png">
 
