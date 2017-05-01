@@ -30,8 +30,8 @@ Winlogbeat có thể bắt được event data từ bất kỳ một event logs 
 <a name="deployment"></a>
 ## 2. Deployment
 ### Requirements
-	windows server 2008 R2
-	Hệ thống ELK đã cài beat, cấu hình nhận log trên các cổng sau:
+* windows server 2008 R2
+* Hệ thống ELK đã cài beat, cấu hình nhận log trên các cổng sau:
 	- Elasticsearch: 192.168.169.223:9200
 	- Logstash: 192.168.169.220:5044
 	 
@@ -180,8 +180,8 @@ Ngoài Winlogbeat, Filebeat có thể đẩy bất kỳ file log nào trên wind
 * Mở PowerShell dưới quyền Administrator
 * Chạy các lệnh sau trên PowerShell để install 
 
-	cd 'C:\Program Files\Filebeat'
-	.\install-service-filebeat.ps1
+		cd 'C:\Program Files\Filebeat'
+		.\install-service-filebeat.ps1
 	
 Nếu không chạy được thì dùng lệnh sau:
 
