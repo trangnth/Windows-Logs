@@ -1,11 +1,11 @@
 ﻿Đẩy log từ windows về elasticsearch sử dụng :
 
-[Winlogbeat](#winlogbeat)
+I. [Winlogbeat](#winlogbeat)
 
-[Filebeat](#filebeat)
+II. [Filebeat](#filebeat)
 
-<a name="winlogbeat">
-# Winlogbeat
+<a name="winlogbeat"></a>
+# I. Winlogbeat
 
 1. [Overview](#overview)
 
@@ -160,7 +160,7 @@ Tham khảo: https://www.elastic.co/guide/en/beats/winlogbeat/current/winlogbeat
 
 
 <a name = "filebeat"></a>
-# Filebeat
+# II. Filebeat
 
 Ngoài Winlogbeat, Filebeat có thể đẩy bất kỳ file log nào trên windows theo từng dòng
 
