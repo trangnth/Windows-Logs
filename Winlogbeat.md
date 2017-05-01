@@ -1,3 +1,10 @@
+Đẩy log từ windows về elasticsearch sử dụng :
+
+[Winlogbeat](#winlogbeat)
+
+[Filebeat](#filebeat)
+
+<a name="winlogbeat">
 # Winlogbeat
 
 1. [Overview](#overview)
@@ -6,8 +13,8 @@
 
 3. [Research](#research)
 
-<a name="overview"></a>
 
+<a name="overview"></a>
 ## 1. Overview
 
 Winlogbeat giúp đẩy windows event logs về Elasticsearch hoặc Logstash, có thể cài đặt chúng như một Windows service trên Windows XP hoặc nhưng phiên bản sau đó.
@@ -50,8 +57,8 @@ Winlogbeat có thể bắt được event data từ bất kỳ một event logs 
 * Mở PowerShell dưới quyền Administrator
 * Chạy các lệnh sau trên PowerShell để install 
 		
-		PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1
 		cd 'C:\Program Files\Winlogbeat'
+		PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1
 		.\install-service-winlogbeat.ps1
 
 
@@ -147,4 +154,23 @@ Tiếp theo, tạo một số các visualize đê có thể theo dõi trên Dash
 <a name="research"></a>
 ## 3. Research
 Tham khảo: https://www.elastic.co/guide/en/beats/winlogbeat/current/winlogbeat-getting-started.html
- 
+
+<a name = "filebeat">
+# Filebeat
+
+Filebeat có thể đẩy bất kỳ file log nào theo từng dòng
+
+## Installtion
+
+* Download filebeat tại [Đây](https://www.elastic.co/downloads/beats/filebeat)
+* Giải nén ra `C:\Program Files` và đổi tên thư mục thành `Filebeat`
+* Mở PowerShell dưới quyền Administrator
+* Chạy các lệnh sau trên PowerShell để install 
+
+	cd 'C:\Program Files\Filebeat'
+	PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-filebeat.ps1
+	.\install-service-filebeat.ps1
+	
+
+	
+
