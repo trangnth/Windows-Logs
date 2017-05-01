@@ -1,8 +1,8 @@
-﻿Đẩy log từ windows về elasticsearch sử dụng :
+﻿# Đẩy log từ windows về elasticsearch sử dụng :
 
-I. [Winlogbeat](#winlogbeat)
+### I. [Winlogbeat](#winlogbeat)
 
-II. [Filebeat](#filebeat)
+### II. [Filebeat](#filebeat)
 
 <a name="winlogbeat"></a>
 # I. Winlogbeat
@@ -165,8 +165,11 @@ Tham khảo: https://www.elastic.co/guide/en/beats/winlogbeat/current/winlogbeat
 Ngoài Winlogbeat, Filebeat có thể đẩy bất kỳ file log nào trên windows theo từng dòng
 
 [Step 1: Installing Filebeat](#step1)
+
 [Step 2: Configuring Filebeat](#step2)
+
 [Step 3: Starting Filebeat](#step3)
+
 [Step 4: Loading the Kibana Index Pattern](#step4)
 
 <a name=step1></a>
