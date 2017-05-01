@@ -193,13 +193,13 @@ Nếu không chạy được thì dùng lệnh sau:
 Sử dụng output elasticsearch, sửa ip như sau:
 
 	output.elasticsearch:
- 	  hosts: ["192.168.1.42:9200"] 
+ 	  hosts: ["192.168.169.223:9200"] 
 
 Nếu muốn output ra logstash thì sửa ip đoạn sau:
 
 	#----------------------------- Logstash output --------------------------------
 	output.logstash:
-	  hosts: ["127.0.0.1:5044"]
+	  hosts: ["192.168.169.220:5044"]
 
 **Test**
 
