@@ -1,4 +1,4 @@
-Đẩy log từ windows về elasticsearch sử dụng :
+﻿Đẩy log từ windows về elasticsearch sử dụng :
 
 [Winlogbeat](#winlogbeat)
 
@@ -58,8 +58,11 @@ Winlogbeat có thể bắt được event data từ bất kỳ một event logs 
 * Chạy các lệnh sau trên PowerShell để install 
 		
 		cd 'C:\Program Files\Winlogbeat'
-		PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1
 		.\install-service-winlogbeat.ps1
+
+Nếu không chạy được thì dùng lệnh sau:'
+
+	PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1
 
 
 <a name="step2"></a>
@@ -155,11 +158,18 @@ Tiếp theo, tạo một số các visualize đê có thể theo dõi trên Dash
 ## 3. Research
 Tham khảo: https://www.elastic.co/guide/en/beats/winlogbeat/current/winlogbeat-getting-started.html
 
-<a name = "filebeat">
+
+<a name = "filebeat"></a>
 # Filebeat
 
-Filebeat có thể đẩy bất kỳ file log nào theo từng dòng
+Ngoài Winlogbeat, Filebeat có thể đẩy bất kỳ file log nào trên windows theo từng dòng
 
+[Step 1: Installing Filebeat](#step1)
+[Step 2: Configuring Filebeat](#step2)
+[Step 3: Starting Filebeat](#step3)
+[Step 4: Loading the Kibana Index Pattern](#step4)
+
+<a name=step1></a>
 ## Installtion
 
 * Download filebeat tại [Đây](https://www.elastic.co/downloads/beats/filebeat)
@@ -168,9 +178,40 @@ Filebeat có thể đẩy bất kỳ file log nào theo từng dòng
 * Chạy các lệnh sau trên PowerShell để install 
 
 	cd 'C:\Program Files\Filebeat'
-	PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-filebeat.ps1
 	.\install-service-filebeat.ps1
 	
+Nếu không chạy được thì dùng lệnh sau:
+
+	PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-filebeat.ps1
 
 	
+<a name=step2></a>
+## Configuring
+Sử dụng output elasticsearch, sửa ip như sau:
 
+	output.elasticsearch:
+ 	  hosts: ["192.168.1.42:9200"] 
+
+Nếu muốn output ra logstash thì sửa ip đoạn sau:
+
+	#----------------------------- Logstash output --------------------------------
+	output.logstash:
+	  hosts: ["127.0.0.1:5044"]
+
+**Test**
+
+Chạy lệnh sau để test `./filebeat -configtest -e`
+	
+<a name=step3></a>
+## Start filebeat
+
+	PS C:\Program Files\Filebeat> Start-Service filebeat
+
+<a name=step4></a>
+## Loading the Kibana Index Pattern
+
+	./scripts/import_dashboards -only-index
+
+Kiểm tra trên kibana đã có index patterns `filebeat-*` 
+
+**Tham khảo:** https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-getting-started.html
