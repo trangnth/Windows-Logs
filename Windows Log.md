@@ -1,4 +1,4 @@
-﻿# Đẩy log từ windows về elasticsearch sử dụng :
+# Đẩy log từ windows về elasticsearch sử dụng :
 
 ### I. [Winlogbeat](#winlogbeat)
 
@@ -190,7 +190,7 @@ Nếu không chạy được thì dùng lệnh sau:
 	
 <a name=step2></a>
 ## Configuring
-Sử dụng output elasticsearch, sửa ip như sau:
+Nếu output elasticsearch thì sửa ip như sau:
 
 	output.elasticsearch:
  	  hosts: ["192.168.169.223:9200"] 
@@ -204,6 +204,8 @@ Nếu muốn output ra logstash thì sửa ip đoạn sau:
 **Test**
 
 Chạy lệnh sau để test `./filebeat -configtest -e`
+
+Có thể xem file cấu hình sau: [filebeat.yml](filebeat.yml)
 	
 <a name=step3></a>
 ## Start filebeat
