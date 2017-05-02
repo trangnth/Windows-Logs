@@ -177,7 +177,7 @@ Ngoài Winlogbeat, Filebeat có thể đẩy bất kỳ file log nào trên wind
 
 * Download filebeat tại [Đây](https://www.elastic.co/downloads/beats/filebeat)
 * Giải nén ra `C:\Program Files` và đổi tên thư mục thành `Filebeat`
-* Mở PowerShell dưới quyền Administrator
+* Mở **PowerShell** dưới quyền **Administrator**
 * Chạy các lệnh sau trên PowerShell để install 
 
 		cd 'C:\Program Files\Filebeat'
